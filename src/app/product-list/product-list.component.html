@@ -1,15 +1,27 @@
-<h2>Products</h2>
-<div *ngFor="let prod of product">
+<!--<h2>Products</h2>-->
+<!--<div *ngFor="let prod of product">-->
+<!--  <h3>-->
+<!--    <a [title]="prod.name">-->
+<!--      {{ prod.name}}<br>-->
+<!--    </a>-->
+<!--    {{ prod.price}}<br>-->
+<!--    {{ prod.description}}<br>-->
+<!--  </h3>-->
+<!--  <p *ngIf="prod.description">-->
+<!--    Description : {{prod.description}}-->
+<!--  </p>-->
+<!--  <button (click)="share()">Share</button>-->
+<!--<app-product-alert [product]="prod" (notify)="notificationparent()" ></app-product-alert>-->
+<!--</div>-->
+
+
+
+<div *ngFor="let product of product; index as productId" >
   <h3>
-    <a [title]="prod.name">
-      {{ prod.name}}<br>
+    <a [title]="product.name + ' details'" [routerLink]="['/products',
+productId]">
+      {{ product.name }}
     </a>
-    {{ prod.price}}<br>
-    {{ prod.description}}<br>
   </h3>
-  <p *ngIf="prod.description">
-    Description : {{prod.description}}
-  </p>
-  <button (click)="share()">Share</button>
-<app-product-alert [product]="prod" (notify)="notificationparent()" ></app-product-alert>
+  <!-- . . . -->
 </div>
