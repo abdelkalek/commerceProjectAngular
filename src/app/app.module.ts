@@ -9,6 +9,10 @@ import {MatButtonModule} from '@angular/material/button';
 import {ProductAlertComponent} from './product-alert/product-alert.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
 import {RouterModule} from '@angular/router';
+import {CartComponent} from './cart/cart.component';
+import {HttpClientModule} from '@angular/common/http';
+import {ShippingComponent} from './shipping/shipping.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,16 +20,22 @@ import {RouterModule} from '@angular/router';
     ProductListComponent,
     TopbarComponent,
     ProductAlertComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent},
-      { path: 'products/:productId' , component: ProductDetailComponent}
-    ])
+      {path: '', component: ProductListComponent},
+      {path: 'products/:productId', component: ProductDetailComponent},
+      {path: 'cart', component: CartComponent},
+      {path: 'shipping', component: ShippingComponent}
+    ]),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

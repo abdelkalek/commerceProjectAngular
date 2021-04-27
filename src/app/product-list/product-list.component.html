@@ -12,7 +12,7 @@
 
 
 
-<div *ngFor="let product of product; index as productId" >
+<div class="cart" *ngFor="let product of product; index as productId" >
   <h3>
     <a [title]="product.name + ' details'" [routerLink]="['/products',
 productId]">
