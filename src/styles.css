@@ -46,6 +46,7 @@ p {
 /* Hyperlink */
 
 a {
+
   cursor: pointer;
   color: #1976d2;
   text-decoration: none;
@@ -75,6 +76,7 @@ label {
 
 /* Button */
 .button, button {
+  margin: 2px;
   display: inline-flex;
   align-items: center;
   padding: 8px 16px;
